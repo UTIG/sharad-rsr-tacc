@@ -13,11 +13,17 @@ to the source storage servers (at UTIG).
 
 # Cloning
 
-This repository uses submodules, so you must use the --recursive option
+This repository uses [SDS1-SHARAD](https://github.austin.utexas.edu/utig-reason/SDS1-SHARAD)
+ as a submodule, so you must use the --recursive option
 when cloning.
 
-Submodules:
+```
+git clone --recursive https://github.austin.utexas.edu/utig-reason/SDS1-SHARAD.git
+```
 
+
+Submodules:
+https://github.austin.utexas.edu/utig-reason/SDS1-SHARAD.git
 
 Dependencies:
 
