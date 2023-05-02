@@ -18,7 +18,7 @@ This repository uses [SDS1-SHARAD](https://github.austin.utexas.edu/utig-reason/
 when cloning.
 
 ```
-git clone --recursive https://github.austin.utexas.edu/utig-reason/SDS1-SHARAD.git
+git clone --recursive https://github.austin.utexas.edu/utig-reason/sharad-rsr-tacc.git
 ```
 
 
