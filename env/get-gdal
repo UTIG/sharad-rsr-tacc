@@ -1,0 +1,31 @@
+cd
+mkdir -p src
+cd src
+wget https://download.osgeo.org/proj/proj-9.1.1.tar.gz
+tar xvfz proj-9.1.1.tar.gz
+cd proj-9.1.1
+mkdir -p build
+cd build
+cmake -DCMAKE_PREFIX_PATH=~ -DCMAKE_INSTALL_PREFIX=~ ..
+cmake build .
+cmake --build . --target install
+
+cd ~/src
+#wget https://github.com/OSGeo/gdal/releases/download/v3.6.2/gdal-3.6.2.tar.gz
+wget https://github.com/OSGeo/gdal/releases/download/v3.5.1/gdal-3.5.1.tar.gz
+#tar xvfz gdal-3.6.2.tar.gz
+tar xvfz gdal-3.5.1.tar.gz
+cd gdal-3.5.1
+mkdir -p build
+cd build
+cmake -DCMAKE_PREFIX_PATH=~ -DCMAKE_INSTALL_PREFIX=~ -DCMAKE_BUILD_TYPE=Release ..
+cmake build .
+cmake --build . --target install
+
+setenv LD_LIBRARY_PATH $home/lib:$home/lib64:$LD_LIBRARY_PATH
+setenv LDFLAGS -L$home/lib64
+set path = (~/bin $path)
+pip3 install -r requirements.txt
+
+python3
+from osgeo import gdal
