@@ -1,0 +1,16 @@
+#!/bin/bash
+# Not a script, submit this to TACC's squirm queue by using "sbatch run-back"
+# Tries to process 32 tracks on a node with 32 cores.
+
+#SBATCH -J RSR           # Job name
+#SBATCH -o RSR.o%j       # Name of stdout output file
+#SBATCH -e RSR.e%j       # Name of stderr error file
+#SBATCH -p normal          # Queue (partition) name
+#SBATCH -N 1               # Total # of nodes (must be 1 for serial)
+#SBATCH -n 32              # Total # of mpi tasks (should be 1 for serial)
+# Compute nodes have 128 cores
+#SBATCH -t 02:00:00        # Run time (hh:mm:ss)
+#SBATCH -A AST22020       # Project/Allocation name (req'd if you have more than 1)
+
+cd ../SDS1-SHARAD/SHARAD/
+./pipeline.py -j 32 -vv --tracklist 32.txt

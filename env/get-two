@@ -1,0 +1,7 @@
+#!/bin/csh
+# Get another sample track from our system.
+set one = /disk/kea/SDS/orig/supl/xtra-pds/SHARAD/EDR/mrosh_0001/data/edr20xxx/edr2007501/e_2007501_001_ss19_700_a_a.dat
+set one = $one:h
+set out = `echo $one | sed 's%/disk/kea%'$SCRATCH'%'`
+mkdir -p $out:h
+rsync -e 'ssh -p2222' -rav freeze.ig.utexas.edu:$one $out:h

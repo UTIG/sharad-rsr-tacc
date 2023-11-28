@@ -1,0 +1,5 @@
+#!/bin/csh
+# Take all results from TACC and copy them back to our system.
+set all = /disk/kea/SDS/targ/xtra/SHARAD/
+set scr = `echo $all | sed 's%/disk/kea%'$SCRATCH'%'`
+rsync -e 'ssh -p2222' -rav $scr freeze.ig.utexas.edu:$all

@@ -1,0 +1,7 @@
+#!/bin/csh
+# Copy all mrosh_0001 data from our system to TACC
+set one = /disk/kea/SDS/orig/supl/xtra-pds/SHARAD/EDR/mrosh_0001/data/edr02xxx
+set one = $one:h
+set out = `echo $one | sed 's%/disk/kea%'$SCRATCH'%'`
+mkdir -p $out:h
+rsync -e 'ssh -p2222' -rav freeze.ig.utexas.edu:$one $out:h

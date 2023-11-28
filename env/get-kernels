@@ -1,0 +1,9 @@
+#!/bin/csh
+# Copy SPICE kernels from our system to TACC and update imbededed path
+set ker = /disk/kea/SDS/orig/supl/kernels
+set out = `echo $ker | sed 's%/disk/kea%'$SCRATCH'%'`
+mkdir -p $out:h
+rsync -e 'ssh -p2222' -rav freeze.ig.utexas.edu:$ker $out:h
+sed -i \
+        -e "s%/disk/kea/SDS%$SCRATCH/SDS%g" \
+	/scratch/00639/scottk/SDS/orig/supl/kernels/mro/mro_v01.tm

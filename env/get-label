@@ -1,0 +1,6 @@
+#!/bin/csh
+# Copy labels from our system to TACC
+set lab = /disk/kea/SDS/orig/supl/xtra-pds/SHARAD/EDR/mrosh_0004/label
+set out = `echo $lab | sed 's%/disk/kea%'$SCRATCH'%'`
+mkdir -p $out:h
+rsync -e 'ssh -p2222' -rav freeze.ig.utexas.edu:$lab $out:h

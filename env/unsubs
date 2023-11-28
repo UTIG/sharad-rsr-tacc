@@ -1,0 +1,9 @@
+#!/bin/csh
+# Reverse what the "subs" script do.
+if ! $?SCRATCH then
+    setenv SCRATCH /scratch/00639/scottk
+endif
+find .. -name \*.py -exec \
+    sed -i \
+        -e "s%$SCRATCH/SDS%/disk/kea/SDS%g" \
+        '{}' \;

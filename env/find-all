@@ -1,0 +1,2 @@
+#!/bin/csh
+find $SCRATCH/SDS/orig/supl/xtra-pds/SHARAD/EDR -name \*_a_a.dat

@@ -1,0 +1,2 @@
+# What I had to do to install Python's tables at TACC
+pip3 install tables --user --ignore-installed
