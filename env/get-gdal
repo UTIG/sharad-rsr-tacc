@@ -1,3 +1,6 @@
+# How I get gdal working at TACC, just an example, not a script
+
+
 cd
 mkdir -p src
 cd src

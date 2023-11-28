@@ -1,5 +1,7 @@
 #!/bin/csh
+# Get one sample track from our system.
 set one = /disk/kea/SDS/orig/supl/xtra-pds/SHARAD/EDR/mrosh_0001/data/edr02xxx/edr0202601/e_0202601_009_ss19_700_a_a.dat
-set root = /disk/kea/SDS/orig/supl/xtra-pds/SHARAD/EDR
-set out = `echo $one | sed 's%'$root'%'$SCRATCH/EDR'%'`
-rsync -rav freeze.ig.utexas.edu:$one:h $out:h
+set one = $one:h
+set out = `echo $one | sed 's%/disk/kea%'$SCRATCH'%'`
+mkdir -p $out:h
+rsync -e 'ssh -p2222' -rav freeze.ig.utexas.edu:$one $out:h

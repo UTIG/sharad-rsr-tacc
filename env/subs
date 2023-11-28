@@ -1,9 +1,10 @@
 #!/bin/csh
+# Change path prefix from our system to TACC's.
+# This needs to be done differently eventually.
 if ! $?SCRATCH then
     setenv SCRATCH /scratch/00639/scottk
 endif
 find .. -name \*.py -exec \
     sed -i \
-        -e "s%/disk/kea/SDS/orig/supl/xtra-pds/SHARAD/EDR%$SCRATCH/EDR%g" \
         -e "s%/disk/kea/SDS%$SCRATCH/SDS%g" \
         '{}' \;

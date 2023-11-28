@@ -1,1 +1,3 @@
+#!/bin/csh
+#Process a single trackline.
 ./pipeline.py -vv --tracklist one.txt >& error
