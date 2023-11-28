@@ -1,1 +1,1 @@
-./pipeline.py --tracklist one.txt
+./pipeline.py -vv --tracklist one.txt >& error
