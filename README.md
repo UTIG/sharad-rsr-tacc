@@ -33,6 +33,7 @@ sharad-rsr-tacc and SHARAD1-SDS were both written for Python 3.9
 
 These directions are for porting this code from UTIG's environment to TACC's.
 Porting directions will be different for other target systems.
+The example scripts in the env directory will need significant path changes.
 Later releases will improve portability.
 
 
@@ -48,21 +49,28 @@ Later releases will improve portability.
     * see env/get-labels
 
       Like kernels, these labels come from the PDS node and must be stored in the correct location.
+	https://pds-geosciences.wustl.edu/missions/mro/sharad.htm
 
 - Get some data
     * see env/get-one, env/get-two, env/get-mrosh1
+
       Data initially came from the PDS node and is storied in the same arangement.  The first two examples are for single orbits.  The third grabs all of mrosh1.
+	https://pds-geosciences.wustl.edu/missions/mro/sharad.htm
 
 - Set up required python dependancies
     * Install them with pip
+
       Do a "pip3 install `cat SDS1-SHARAD/requirements.txt`"
     * Deal with failures
+
       At TACC multiple depenancies failed to install or function.  Directions for installing those can be found in env/get-gdal, env/get-h5py, and env/get-tables
 
 - Rename path prefix
     * env/subs
+
 	This converts the file structure prefix from UTIG's to TACC's.  Your system prefix will be different.
     * env/unsubs
+
         This can be used to convert the prefix back.  This is useful for doing git commits.
 
 
@@ -70,11 +78,14 @@ Later releases will improve portability.
 
 - Run jobs
     * pipeline.py
+
       The processing pipeline can be run by putting the full path to the data file ending in "_a_a.dat" into text file and passing that file as a tracklist.
 	"./pipeline.py -vv --tracklist one.txt >& error"
     * env/run-back
+
       This is an example of how to run processing on the TACC Lonestar6 backent.
 
 # Synchronize output data
     * env/put-all
+
       This is an example of how to copy processed data from TACC back to UTIG.
