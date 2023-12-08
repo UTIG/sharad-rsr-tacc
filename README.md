@@ -40,10 +40,13 @@ Later releases will improve portability.
 
 - Get SPICE kernels
     * see env/get-kernels
+
       Note, these kernels come from JPL and must be stored on the specified path for them to be found.
+      https://naif.jpl.nasa.gov/pub/naif/MRO/kernels/spk/
 
 - Get PDS3 labels
     * see env/get-labels
+
       Like kernels, these labels come from the PDS node and must be stored in the correct location.
 
 - Get some data
