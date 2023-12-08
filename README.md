@@ -71,7 +71,7 @@ Later releases will improve portability.
 	This converts the file structure prefix from UTIG's to TACC's.  Your system prefix will be different.
     * env/unsubs
 
-        This can be used to convert the prefix back.  This is useful for doing git commits.
+        This can be used to convert the prefix back.  This is useful before doing git diffs and commits.
 
 
 # Running
@@ -83,9 +83,9 @@ Later releases will improve portability.
 	"./pipeline.py -vv --tracklist one.txt >& error"
     * env/run-back
 
-      This is an example of how to run processing on the TACC Lonestar6 backent.
+      This is an example of how to run processing on the TACC Lonestar6 backend.
 
 # Synchronize output data
     * env/put-all
 
-      This is an example of how to copy processed data from TACC back to UTIG.
+      This is an example of how we copied processed data from TACC back to UTIG.
