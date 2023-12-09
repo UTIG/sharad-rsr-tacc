@@ -1,7 +1,7 @@
 # sharad-rsr-tacc
 
 code for running RSR processing of SHARAD on TACC 
-(using [SDS1-SHARAD](https://github.austin.utexas.edu/utig-reason/SDS1-SHARAD))
+(using [SDS1-SHARAD](https://github.com/UTIG/SDS1-SHARAD))
 
 
 This code is meant to be run on a TACC login node, and it orchestrates
@@ -13,17 +13,17 @@ to the source storage servers (at UTIG).
 
 # Cloning
 
-This repository uses [SDS1-SHARAD](https://github.austin.utexas.edu/utig-reason/SDS1-SHARAD)
+This repository uses [SDS1-SHARAD](https://github.com/UTIG/SDS1-SHARAD)
  as a submodule, so you must use the --recursive option
 when cloning.
 
 ```
-git clone --recursive https://github.austin.utexas.edu/utig-reason/sharad-rsr-tacc.git
+git clone --recursive https://github.com/UTIG/sharad-rsr-tacc.git
 ```
 
 
 Submodules:
-https://github.austin.utexas.edu/utig-reason/SDS1-SHARAD.git
+https://github.com/UTIG/SDS1-SHARAD.git
 
 Dependencies:
 
